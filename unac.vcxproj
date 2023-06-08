@@ -42,6 +42,9 @@
       <Project>{7cfb99a0-47a8-4485-beff-3d0104d66509}</Project>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="unac.def" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{7C73E63A-78B3-40C4-87FD-EBF23EA67925}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

@@ -1,6 +1,5 @@
-LIBRARY "zlib"
-
+LIBRARY "unac"
 EXPORTS
-
+unac_string
 
 
