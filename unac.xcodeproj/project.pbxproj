@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9AA652A42A3345BA0082D8B3 /* unac.c in Sources */ = {isa = PBXBuildFile; fileRef = 9AA652942A3345B90082D8B3 /* unac.c */; };
+		9AA652B82A3968190082D8B3 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA652B72A3968190082D8B3 /* libiconv.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -15,6 +16,7 @@
 		9AA652942A3345B90082D8B3 /* unac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unac.c; sourceTree = "<group>"; };
 		9AA652B42A3908550082D8B3 /* _____release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____release.xcconfig"; sourceTree = "<group>"; };
 		9AA652B52A3908560082D8B3 /* _____debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____debug.xcconfig"; sourceTree = "<group>"; };
+		9AA652B72A3968190082D8B3 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -22,6 +24,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AA652B82A3968190082D8B3 /* libiconv.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -33,6 +36,7 @@
 			children = (
 				9AA652762A3345B90082D8B3 /* unac */,
 				9AA652692A3345560082D8B3 /* Products */,
+				9AA652B62A3968190082D8B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,6 +56,14 @@
 				9AA652942A3345B90082D8B3 /* unac.c */,
 			);
 			name = unac;
+			sourceTree = "<group>";
+		};
+		9AA652B62A3968190082D8B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9AA652B72A3968190082D8B3 /* libiconv.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,7 +147,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -165,7 +177,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -173,7 +185,7 @@
 					"$(inherited)",
 					HAVE_CONFIG_H,
 				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
@@ -196,6 +208,7 @@
 					"$(HOME)/operating_system/operating_system/include",
 				);
 				USER_HEADER_SEARCH_PATHS = (
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)/configuration/$(PROJECT_NAME)",
 					.,
 					"$(WorkspaceDir)/source",
 					"$(WorkspaceDir)/source/include",
@@ -204,7 +217,6 @@
 					"$(WorkspaceDir)/operating_system",
 					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)",
 					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)/include",
-					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)/configuration/$(ProjectName)",
 					"$(WorkspaceDir)/port/_",
 					"$(WorkspaceDir)/port/include",
 					"$(PROJECT_DIR)",
@@ -224,7 +236,7 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -254,13 +266,13 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_C_LANGUAGE_STANDARD = c11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					HAVE_CONFIG_H,
 				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
@@ -282,6 +294,7 @@
 					"$(HOME)/operating_system/operating_system/include",
 				);
 				USER_HEADER_SEARCH_PATHS = (
+					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)/configuration/$(PROJECT_NAME)",
 					.,
 					"$(WorkspaceDir)/source",
 					"$(WorkspaceDir)/source/include",
@@ -290,7 +303,6 @@
 					"$(WorkspaceDir)/operating_system",
 					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)",
 					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)/include",
-					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)/configuration/$(ProjectName)",
 					"$(WorkspaceDir)/port/_",
 					"$(WorkspaceDir)/port/include",
 					"$(PROJECT_DIR)",
