@@ -318,6 +318,8 @@
 		9AA6526D2A3345560082D8B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				EXECUTABLE_PREFIX = lib;
 				PLATFORM_MODIFIER = macos;
 			};
@@ -326,6 +328,8 @@
 		9AA6526E2A3345560082D8B3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				EXECUTABLE_PREFIX = lib;
 				PLATFORM_MODIFIER = macos;
 			};
