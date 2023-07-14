@@ -232,6 +232,7 @@
       <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
       <EnableModules>false</EnableModules>
       <PreprocessorDefinitions>HAVE_CONFIG_H;_$(ProjectName)_project;_output_type_$(OutputType);WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -301,6 +302,7 @@
       <WholeProgramOptimization>false</WholeProgramOptimization>
       <EnableModules>false</EnableModules>
       <PreprocessorDefinitions>HAVE_CONFIG_H;_$(ProjectName)_project;_output_type_$(OutputType);WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -377,6 +379,7 @@
       <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
       <EnableModules>false</EnableModules>
       <PreprocessorDefinitions>HAVE_CONFIG_H;_$(ProjectName)_project;_output_type_$(OutputType);WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -448,6 +451,7 @@
       <ObjectFileName>$(IntDir)%(RelativeDir)</ObjectFileName>
       <EnableModules>false</EnableModules>
       <PreprocessorDefinitions>HAVE_CONFIG_H;_$(ProjectName)_project;_output_type_$(OutputType);WIN32;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
