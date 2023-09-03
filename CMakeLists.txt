@@ -30,8 +30,9 @@ if (MSVC)
 elseif(${LINUX} OR ${FREEBSD})
 
 
-
+if(!FEDORA)
     pkg_check_modules(PKGCONFIG iconv)
+    endif()
 
     #target_compile_options(${PROJECT_NAME} PRIVATE -fpermissive)
     #target_compile_options(static_${PROJECT_NAME} PRIVATE -fpermissive)
