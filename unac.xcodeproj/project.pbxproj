@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A50C7662B6C861900FDB101 /* unac.c in Sources */ = {isa = PBXBuildFile; fileRef = 9AA652942A3345B90082D8B3 /* unac.c */; };
+		9A50C7682B6C861900FDB101 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA652B72A3968190082D8B3 /* libiconv.tbd */; };
 		9AA652A42A3345BA0082D8B3 /* unac.c in Sources */ = {isa = PBXBuildFile; fileRef = 9AA652942A3345B90082D8B3 /* unac.c */; };
 		9AA652B82A3968190082D8B3 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AA652B72A3968190082D8B3 /* libiconv.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A50C76C2B6C861900FDB101 /* libios_unac.a */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libios_unac.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA652682A3345560082D8B3 /* libunac.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libunac.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA652942A3345B90082D8B3 /* unac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = unac.c; sourceTree = "<group>"; };
 		9AA652B42A3908550082D8B3 /* _____release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "_____release.xcconfig"; sourceTree = "<group>"; };
@@ -20,6 +23,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9A50C7672B6C861900FDB101 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A50C7682B6C861900FDB101 /* libiconv.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9AA652662A3345560082D8B3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -44,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				9AA652682A3345560082D8B3 /* libunac.dylib */,
+				9A50C76C2B6C861900FDB101 /* libios_unac.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +81,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		9A50C7642B6C861900FDB101 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9AA652642A3345560082D8B3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -79,6 +98,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		9A50C7632B6C861900FDB101 /* ios_unac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9A50C7692B6C861900FDB101 /* Build configuration list for PBXNativeTarget "ios_unac" */;
+			buildPhases = (
+				9A50C7642B6C861900FDB101 /* Headers */,
+				9A50C7652B6C861900FDB101 /* Sources */,
+				9A50C7672B6C861900FDB101 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ios_unac;
+			productName = unac;
+			productReference = 9A50C76C2B6C861900FDB101 /* libios_unac.a */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
 		9AA652672A3345560082D8B3 /* unac */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9AA6526C2A3345560082D8B3 /* Build configuration list for PBXNativeTarget "unac" */;
@@ -103,7 +139,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					9AA652672A3345560082D8B3 = {
 						CreatedOnToolsVersion = 14.2;
@@ -124,11 +160,20 @@
 			projectRoot = "";
 			targets = (
 				9AA652672A3345560082D8B3 /* unac */,
+				9A50C7632B6C861900FDB101 /* ios_unac */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9A50C7652B6C861900FDB101 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A50C7662B6C861900FDB101 /* unac.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9AA652652A3345560082D8B3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -140,6 +185,30 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		9A50C76A2B6C861900FDB101 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_EXTENSION = a;
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				PLATFORM_MODIFIER = ios;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9A50C76B2B6C861900FDB101 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_EXTENSION = a;
+				EXECUTABLE_PREFIX = lib;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
+				PLATFORM_MODIFIER = ios;
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
 		9AA6526A2A3345560082D8B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9AA652B52A3908560082D8B3 /* _____debug.xcconfig */;
@@ -176,6 +245,7 @@
 				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = c11;
@@ -207,7 +277,6 @@
 				PLATFORM_DIR = macos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				STRIP_INSTALLED_PRODUCT = NO;
 				SYSTEM_HEADER_SEARCH_PATHS = (
 					"$(WorkspaceDir)/operating_system",
 					"$(WorkspaceDir)/operating_system/operating_system-$(PLATFORM_MODIFIER)",
@@ -275,6 +344,7 @@
 				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				EXECUTABLE_EXTENSION = dylib;
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = c11;
@@ -337,6 +407,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PLATFORM_MODIFIER = macos;
 			};
 			name = Debug;
@@ -345,6 +416,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = lib;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				PLATFORM_MODIFIER = macos;
 			};
 			name = Release;
@@ -352,6 +424,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9A50C7692B6C861900FDB101 /* Build configuration list for PBXNativeTarget "ios_unac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9A50C76A2B6C861900FDB101 /* Debug */,
+				9A50C76B2B6C861900FDB101 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9AA652632A3345560082D8B3 /* Build configuration list for PBXProject "unac" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
