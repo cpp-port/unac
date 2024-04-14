@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../../library/libstatic_unac.a CMakeFiles/static_unac.dir/unac.c.o
+/usr/bin/ranlib ../../../library/libstatic_unac.a
