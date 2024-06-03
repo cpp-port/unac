@@ -42,12 +42,18 @@ elseif(${LINUX} OR ${FREEBSD} OR ${OPENBSD} OR ${NETBSD})
 
     else()
 
-        pkg_check_modules(PKGCONFIG iconv)
-        target_compile_options(${PROJECT_NAME} PRIVATE ${PKGCONFIG_CFLAGS})
-        target_compile_options(static_${PROJECT_NAME} PRIVATE ${PKGCONFIG_CFLAGS})
-        target_link_options(${PROJECT_NAME} PRIVATE ${PKGCONFIG_LDFLAGS})
-        target_link_libraries(${PROJECT_NAME} PRIVATE ${library_references} ${PKGCONFIG_LIBRARIES} ${global_library_references})
-        target_link_libraries(static_${PROJECT_NAME} PRIVATE ${static_library_references} ${PKGCONFIG_LIBRARIES})
+
+#        pkg_check_modules(PKGCONFIG iconv)
+#        target_compile_options(${PROJECT_NAME} PRIVATE ${PKGCONFIG_CFLAGS})
+#        target_compile_options(static_${PROJECT_NAME} PRIVATE ${PKGCONFIG_CFLAGS})
+#        target_link_options(${PROJECT_NAME} PRIVATE ${PKGCONFIG_LDFLAGS})
+#        target_link_libraries(${PROJECT_NAME} PRIVATE ${library_references} ${PKGCONFIG_LIBRARIES} ${global_library_references})
+#        target_link_libraries(static_${PROJECT_NAME} PRIVATE ${static_library_references} ${PKGCONFIG_LIBRARIES})
+
+
+        target_link_libraries(${PROJECT_NAME} PRIVATE ${library_references} ${global_library_references})
+        target_link_libraries(static_${PROJECT_NAME} PRIVATE ${static_library_references})
+
 
     endif()
 
