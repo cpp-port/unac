@@ -13772,7 +13772,7 @@ static int convert(const char* from, const char* to,
   int from_utf16 = !strcmp(utf16be(), from);
   const char space[] = { 0x00, 0x20 };
 
-  out_size = in_length > 0 ? in_length : 1024;
+  out_size = in_length > 0 ? in_length * 4 : 1024;
   if(*outp) {
     out = *outp;
     /* +1 for null */
