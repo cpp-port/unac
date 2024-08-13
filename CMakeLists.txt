@@ -35,7 +35,8 @@ elseif(${LINUX} OR ${FREEBSD} OR ${OPENBSD} OR ${NETBSD})
     #target_compile_options(static_${PROJECT_NAME} PRIVATE $<$<COMPILE_LANGUAGE:CXX>:-fpermissive  ${EXTRA_CXX_TARGET_COMPILER_OPTIONS}>)
     target_compile_definitions(static_${PROJECT_NAME} PRIVATE CUBE)
 
-    if(${SUSE} OR ${OPENBSD})
+    #if(${SUSE} OR ${OPENBSD})
+    if(${OPENBSD})
 
         target_link_libraries(${PROJECT_NAME} PRIVATE iconv ${library_references} ${global_library_references})
         target_link_libraries(static_${PROJECT_NAME} PRIVATE ${static_library_references})
