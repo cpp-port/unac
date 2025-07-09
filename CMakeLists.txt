@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(unac CXX)
+project(unac C)
 
 
 list(APPEND library_source
@@ -15,18 +15,22 @@ add_library(static_${PROJECT_NAME} STATIC ${library_source})
 #target_precompile_headers(static_${PROJECT_NAME} PRIVATE framework.h)
 
 
-set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE CXX)
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE HAVE_CONFIG_H)
 target_compile_definitions(static_${PROJECT_NAME} PRIVATE HAVE_CONFIG_H)
 
 
 if (MSVC)
+    list(APPEND library_references
+    iconv)
+    message(STATUS "unac MSVC")
     target_compile_options(${PROJECT_NAME} PRIVATE "/MD$<$<CONFIG:Debug>:d>")
     target_link_options(${PROJECT_NAME} PRIVATE "/DEFAULTLIB:msvcrt$<$<CONFIG:Debug>:d>")
     target_link_options(${PROJECT_NAME} PRIVATE "/SUBSYSTEM:WINDOWS")
+    target_link_options(${PROJECT_NAME} PRIVATE "/DEF:${CMAKE_CURRENT_SOURCE_DIR}/${PROJECT_NAME}.def")
+    target_link_options(${PROJECT_NAME} PRIVATE "/IMPLIB:${LIBRARY_OUTPUT_PATH}/${PROJECT_NAME}.lib")
     target_link_libraries(${PROJECT_NAME} PRIVATE ${library_references} ${global_library_references})
-    target_link_libraries(${PROJECT_NAME} PRIVATE ws2_32 winmm shlwapi)
+
 elseif (${LINUX} OR ${__BSD__} OR ${ANDROID})
 
 
@@ -65,10 +69,10 @@ elseif (${LINUX} OR ${__BSD__} OR ${ANDROID})
 endif()
 
 
-list(APPEND library_include_directories ${CMAKE_CURRENT_SOURCE_DIR}/../../../operating_system/operating_system-${PLATFORM_NAME}/configuration/${PROJECT_NAME})
 list(APPEND library_include_directories ${CMAKE_CURRENT_SOURCE_DIR}/../..)
 list(APPEND library_include_directories ${CMAKE_CURRENT_SOURCE_DIR}/..)
 list(APPEND library_include_directories ${CMAKE_CURRENT_SOURCE_DIR})
+list(APPEND library_include_directories ${CMAKE_CURRENT_SOURCE_DIR}/../../../operating_system/operating_system-${PLATFORM_NAME}/configuration/${PROJECT_NAME})
 
 
 
