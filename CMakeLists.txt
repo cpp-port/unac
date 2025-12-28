@@ -20,7 +20,7 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE HAVE_CONFIG_H)
 target_compile_definitions(static_${PROJECT_NAME} PRIVATE HAVE_CONFIG_H)
 
 
-if (MSVC)
+if(${WIN32})
     list(APPEND library_references
     iconv)
     message(STATUS "unac MSVC")
