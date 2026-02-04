@@ -40,7 +40,7 @@ elseif (${LINUX} OR ${__BSD__} OR ${ANDROID})
     target_compile_definitions(static_${PROJECT_NAME} PRIVATE CUBE)
 
     #if(${SUSE} OR ${OPENBSD})
-    if(${OPENBSD} OR ${NETBSD} OR ${ANDROID})
+    if(${__BSD__} OR ${ANDROID})
 
         target_link_libraries(${PROJECT_NAME} PRIVATE iconv ${library_references} ${global_library_references})
         target_link_libraries(static_${PROJECT_NAME} PRIVATE ${static_library_references})
