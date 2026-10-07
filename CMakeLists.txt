@@ -84,3 +84,7 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE _${PROJECT_NAME}_project)
 
 
 
+
+if(CMAKE_SYSTEM_NAME STREQUAL "Haiku")
+  target_link_libraries(unac PRIVATE iconv)
+endif()
