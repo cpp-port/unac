@@ -1,6 +1,21 @@
 cmake_minimum_required(VERSION 3.16)
 project(unac C)
 
+if(__REACTOS__)
+    add_library(unac SHARED "${CMAKE_CURRENT_SOURCE_DIR}/unac.c")
+    set_target_properties(unac PROPERTIES PREFIX "" WINDOWS_EXPORT_ALL_SYMBOLS ON)
+    target_include_directories(unac PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/include" "${CMAKE_CURRENT_SOURCE_DIR}/../iconv/include")
+    target_compile_definitions(unac PRIVATE __REACTOS__ _WIN32_WINNT=0x0501 WINVER=0x0501 HAVE_VSNPRINTF UNAC_VERSION="1.8.0")
+    if(MINGW)
+        target_link_options(unac PRIVATE -static-libgcc)
+    endif()
+    target_link_libraries(unac PRIVATE iconv)
+    install(TARGETS unac RUNTIME DESTINATION binary ARCHIVE DESTINATION library)
+    install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/include/unac.h" DESTINATION include)
+
+    return()
+endif()
+
 
 list(APPEND library_source
     unac.c
